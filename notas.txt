@@ -1,0 +1,6 @@
+/Comando para cambiar de repositorio en la terminal
+git remote set-url origin {your-new-url}
+
+
+/pagina donde estan los comandos
+https://stackoverflow.com/questions/48484035/visual-studio-code-how-to-change-the-current-git-repository
