@@ -16,7 +16,9 @@ export const Home = ({ senProduct, nameProp }) => {
   }
 
   useEffect(() => {
-    getItems()
+    setTimeout(() => {
+      return getItems()
+    }, 2000)
   }, [])
 
   useEffect(() => {
@@ -25,15 +27,23 @@ export const Home = ({ senProduct, nameProp }) => {
 
   return (
     //<div className="App-header">
-      <ul className='nombres estilos'>
-        {
-          item.map(product => (
+    <ul className='nombres estilos'>
+      {
+        item.map(product => (
 
-            <li className='cards' key={product._id} src={product.image} onClick={() => senProduct(product._id)}><br></br>{product.product_name}<br/>${product.price}</li>
+          <li className='cards' key={product._id} src={product.image} onClick={() => senProduct(product._id)}>
+            <img className='pictures' src={product.image} alt={product._id} />
+            <br />
+            {product.product_name}
+            <br />
+            ${product.price}
+            <br />
+            <br />
+          </li>
 
-          ))
-        }
-      </ul>
+        ))
+      }
+    </ul>
     //</div>
   )
 }

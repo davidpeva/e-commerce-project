@@ -47,10 +47,21 @@
   object-fit: contain;
   background-color: rgb(255, 255, 255);
   justify-content: left;
+  margin: 10px 0;
 }
 
 .cards {
-  border: 2px solid rgb(143, 143, 143);
+  border: 1px solid rgb(224, 224, 224);
   list-style: none;
+}
+
+.pictures {
+  height: 200px;
+  margin: 10px 0;
+  width: 200px;
+}
+
+li.cards {
+  margin-bottom: 10px;
 }
 
