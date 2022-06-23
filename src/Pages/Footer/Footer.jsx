@@ -24,15 +24,6 @@ export default function Footer() {
                             <li>Numero 3</li>
                         </ul>
                     </div>
-                    {/* columna 3 */}
-                    <div className="col-md-3 col-sm-6">
-                        <h4>Impo Ganga</h4>
-                        <ul className='list-unstyled'>
-                            <li>Numero 1</li>
-                            <li>Numero 2</li>
-                            <li>Numero 3</li>
-                        </ul>
-                    </div>
                 </div>
                 <div className="footer-bottom">
                     <p className="text-xs-center">

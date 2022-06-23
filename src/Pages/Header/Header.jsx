@@ -7,7 +7,7 @@ import { Navbar, Container, Nav, Form, FormControl, Button } from 'react-bootstr
 export default function Header() {
     return (
         <header>
-            <Navbar bg="dark" expand="lg" variant="dark">
+            <Navbar bg="dark" expand="lg" variant="dark" className='height'>
                 <Container fluid>
                     <Navbar.Brand href="#" >Navbar scroll</Navbar.Brand>
                     {/* <Navbar.Toggle aria-controls="navbarScroll" /> */}

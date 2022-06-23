@@ -11,9 +11,12 @@ function App() {
       <Router>
         <Header/>
         <Routes>
-          <Route 
+          <Route
+          className='nombres' 
           path="/"
-          element={<Home/>}
+          element={<Home
+            senProduct={(_id) => (console.log('id desde el componente padre', _id))}
+          />}
           />
         </Routes>
         <Footer/>
