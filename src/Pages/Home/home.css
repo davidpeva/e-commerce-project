@@ -45,8 +45,8 @@
   grid-column-gap: 17px;
   grid-row-gap: 17px;
   object-fit: contain;
+  padding: 0 10px ;
   background-color: rgb(255, 255, 255);
-  justify-content: left;
   margin: 10px 0;
 }
 
@@ -61,7 +61,8 @@
   width: 200px;
 }
 
-li.cards {
-  margin-bottom: 10px;
+li {
+    color: rgb(109, 109, 109);
+    text-decoration: none;
 }
 

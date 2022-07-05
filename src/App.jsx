@@ -1,32 +1,36 @@
 import { Home } from "./Pages/Home/Home";
-
-import {Routes, Route, BrowserRouter as Router } from 'react-router-dom'
 import Header from "./Pages/Header/Header";
 import Footer from "./Pages/Footer/Footer";
+import Product from "./Pages/Product/Product";
+import { Routes, Route, BrowserRouter as Router } from 'react-router-dom'
 
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <Router>
-        <Header/>
+        <Header />
         <Routes>
           <Route
-          className='nombres' 
-          path="/"
-          element={<Home
-            senProduct={(_id) => (console.log('id desde el componente padre', _id))}
-          />}
+            className='nombres'
+            path="/"
+            element={
+              <Home
+                senProduct={(_id) => (('id desde el componente padre', _id))}
+              />
+            }
+            
           />
+          <Route path='product-info' element={<Product/>} senProduct={(_id) => (('id desde el componente padre', _id))}/>
         </Routes>
-        <Footer/>
+        <Footer />
       </Router>
-      
-
-
     </div>
   );
 }
 
-export default App;
+
+
+
+
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import './header.css'
 import { Navbar, Container, Nav, Form, FormControl, Button } from 'react-bootstrap';
-
+import { Link } from 'react-router-dom'
 
 
 export default function Header() {
@@ -9,7 +9,7 @@ export default function Header() {
         <header>
             <Navbar bg="dark" expand="lg" variant="dark" className='height'>
                 <Container fluid>
-                    <Navbar.Brand href="#" >Navbar scroll</Navbar.Brand>
+                    <Navbar.Brand><Link to='/' className='home-logo'>Todo a 1000</Link></Navbar.Brand>
                     {/* <Navbar.Toggle aria-controls="navbarScroll" /> */}
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
@@ -17,11 +17,8 @@ export default function Header() {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <Nav.Link href="#action1">Home</Nav.Link>
-                            <Nav.Link href="#action2">Link</Nav.Link>
-                            <Nav.Link href="#" disabled>
-                                Link
-                            </Nav.Link>
+                            <Nav.Link><Link to='/' className='options'>Home</Link></Nav.Link>|{""}
+                            <Nav.Link><Link to='product-info' className='options'>Info Producto</Link></Nav.Link>
                         </Nav>
                         <Form className="d-flex">
                             <FormControl
