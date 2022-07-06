@@ -42,14 +42,7 @@ export const Home = ({ senProduct, nameProp }) => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber)
   //LOGICA PARA DAR CLICK SOBRE UN NUMERO Y QUE SE MUEVA
 
-  const goUp = () => {
-    if(paginate === true ){
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        })
-    }
-  }
+  const goUp = () => {window.scrollTo(0 , 0)}
 
 
   return (
@@ -98,7 +91,7 @@ export const Home = ({ senProduct, nameProp }) => {
         </ul>
       </div>
       <div>
-          <Pagination postsPerPage={postsPerPage} totalPosts={item.length} paginate={paginate} />
+          <Pagination postsPerPage={postsPerPage} totalPosts={item.length} paginate={paginate} onClick={goUp()}/>
       </div>
     </div>
   )
