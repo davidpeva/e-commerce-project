@@ -44,7 +44,6 @@ export const Home = ({ senProduct, nameProp }) => {
 
   const goUp = () => {window.scrollTo(0 , 0)}
 
-
   return (
     <div>
       <div>
