@@ -1,10 +1,9 @@
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import error from '../../Assets/404.jfif'
 import './home.css'
-import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import Pagination from '../../Components/Pagination/Pagination'
-
 
 export const Home = ({ senProduct, nameProp }) => {
 
@@ -13,7 +12,17 @@ export const Home = ({ senProduct, nameProp }) => {
   //LOGICA PARA LA PAGINACION
   const [currentPage, setCurrentPage] = useState(1)
   const [postsPerPage] = useState(30)
+
   //LOGICA PARA LA PAGINACION
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPage = indexOfLastPost - postsPerPage;
+  const currentPost = item.slice(indexOfFirstPage, indexOfLastPost)
+
+  //LOGICA PARA DAR CLICK SOBRE UN NUMERO Y QUE SE MUEVA
+  const paginate = (pageNumber) => setCurrentPage(pageNumber)
+
+  //AL DAR CLICK EN UNA PAGINA NUEVA SE VA ARRIBA
+  const goUp = () => { window.scrollTo(0, 0) }
 
   const getItems = async () => {
     try {
@@ -28,21 +37,10 @@ export const Home = ({ senProduct, nameProp }) => {
     getItems()
   }, [])
 
-  useEffect(() => {
-    console.log('nameProp', nameProp);
-  }, [nameProp])
+  // useEffect(() => {
+  //   console.log('nameProp', nameProp);
+  // }, [nameProp])
 
-  //LOGICA PARA LA PAGINACION
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPage = indexOfLastPost - postsPerPage;
-  const currentPost = item.slice(indexOfFirstPage, indexOfLastPost)
-  //LOGICA PARA LA PAGINACION
-
-  //LOGICA PARA DAR CLICK SOBRE UN NUMERO Y QUE SE MUEVA
-  const paginate = (pageNumber) => setCurrentPage(pageNumber)
-  //LOGICA PARA DAR CLICK SOBRE UN NUMERO Y QUE SE MUEVA
-
-  const goUp = () => {window.scrollTo(0 , 0)}
 
   return (
     <div>
@@ -51,8 +49,10 @@ export const Home = ({ senProduct, nameProp }) => {
           {
             //ACA USO CURRENTPOST.MAP Y NO ITEM.MAP PARA QUE SOLO ME ACOMODE LOS 30 CON ITEM.MAP ME ACOMODA LOS 200
             currentPost.map(product => (
-              <Link to='product-info'>
                 <li className='cards' key={product._id} onClick={((_id) => senProduct(product._id))}>
+
+                  <Link to={`/product/${product._id}`}>
+                    
                   {
                     product.image
                       ?
@@ -64,12 +64,13 @@ export const Home = ({ senProduct, nameProp }) => {
                         :
                         <img className='pictures' src={error} alt='error' />
                   }
+                  </Link>
                   {/* {
               product.image
               ?
               <img className='pictures' src={product.image} alt={product._id}/>
               :
-              product.images.includes('jpeg')
+              product.images.value !== 'http'
               ?
               <img className='pictures' src={error} alt='error'/>
               :
@@ -83,14 +84,13 @@ export const Home = ({ senProduct, nameProp }) => {
                   <br />
                   <br />
                 </li>
-              </Link>
             ))
 
           }
         </ul>
       </div>
       <div>
-          <Pagination postsPerPage={postsPerPage} totalPosts={item.length} paginate={paginate} onClick={goUp()}/>
+        <Pagination postsPerPage={postsPerPage} totalPosts={item.length} paginate={paginate} onClick={goUp()} />
       </div>
     </div>
   )

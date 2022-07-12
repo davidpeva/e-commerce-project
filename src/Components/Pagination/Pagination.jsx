@@ -13,11 +13,11 @@ export default function Pagination({ postsPerPage, totalPosts, paginate }) {
         <nav>
                 <ul className='pagination'>
                     {pageNumbers.map(number => (
-                        <li key={number} className='page-item' path>
-                            <li onClick={() => paginate(number)} href='!#' className='page-link'>
+                        <div key={number} className='page-item' path='true'>
+                            <div onClick={() => paginate(number)} href='!#' className='page-link'>
                                 {number}
-                            </li>
-                        </li>
+                            </div>
+                        </div>
                     ))}
                 </ul>
         </nav>
