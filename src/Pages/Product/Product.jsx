@@ -31,6 +31,7 @@ export const Product = () => {
             <div>{info.product_name}</div>
             <div>${info.price}</div>
         </div>
+        //agregarle un boton de go back hay ejemplos en la pagina que me ayudo
     )
 }
 
