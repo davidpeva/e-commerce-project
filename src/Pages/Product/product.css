@@ -1,0 +1,10 @@
+.product-detail {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid green;
+    display: flex;
+    height: 60vh;
+    justify-content: center;
+
+    margin: 1rem auto;
+    width: 50vw;
+}
