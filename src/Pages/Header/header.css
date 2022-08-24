@@ -1,0 +1,90 @@
+header {
+    font-weight: 400;
+    position: sticky;
+    top: 0%;
+    width: 100%;
+    background-color: #ffffff;
+    height: 123px;
+    z-index: 4;
+    /* height: 12rem; */
+}
+
+.div1 {
+    position: relative;
+}
+
+.div2 {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #f07066;
+    margin: 4rem 0 0 0;
+    padding: 0.6rem 2rem;
+}
+
+.store-logo {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 1.5rem 1.5rem 2rem 5rem;
+    text-decoration: none;
+    margin: 0;
+    float: left;
+}
+
+.home {
+    background-color: #f07066;
+    color: #2d2d2d;
+    font-weight: bold;
+    padding: 1.5rem 1.5rem;
+    text-decoration: none;
+    float: left;
+}
+
+.input {
+    border: none;
+    border-radius: 1.2rem 0 0 1.2rem;
+    color: #3d3c3c;
+    height: 2.5rem;
+    outline: none;
+    width: 30rem;
+    padding: 0 1rem;
+}
+
+.button {
+    border: none;
+    border-radius: 0 1.2rem 1.2rem 0;
+    background-color: #2d2d2d;
+    color: #ffffff;
+    height: 2.5rem;
+    padding: 0 1rem;
+}
+
+form {
+    padding: 0.1rem;
+}
+
+form:focus-within {
+    border-radius: 1.2rem;
+    -moz-border-radius: 44px 44px 44px 44px;
+    -webkit-border-radius: 44px 44px 44px 44px;
+    outline: 2px dashed #2d2d2d;
+    transition: .3s ease-in-out;
+}
+
+.button:hover {
+    transition: .3s ease-in-out;
+    color: #f07066;
+  }
+
+.store-logo:hover {
+    transition: .3s ease-in-out;
+    color: #f07066;
+  }
+
+.home:hover {
+    transition: .3s ease-in-out;
+    color:  #ffffff;
+  }

@@ -1,0 +1,29 @@
+/Comando para cambiar de repositorio en la terminal
+git remote set-url origin {your-new-url}
+
+
+/pagina donde estan los comandos
+https://stackoverflow.com/questions/48484035/visual-studio-code-how-to-change-the-current-git-repository
+
+
+/Pagina con muchos tips y me ayudo a hacer el fecth junto con el ejercicio de melani
+/tambien esta el tip de el boton bolver atras a la pagina principal q creo q lo puedo usar en el todo a  mil
+https://betterprogramming.pub/setting-up-dynamic-routing-in-react-23ca07d59057
+
+/aca esta el ejemplo de los forms por ejemplo el del login
+https://www.youtube.com/watch?v=laxAixkZ0bA
+
+/repo profesor victor
+https://github.com/Vicmi13/G14-Code/tree/main/KATA_INTRO_FRONT
+
+/
+https://www.codewars.com/kata/53da3dbb4a5168369a0000fe/train/javascript
+
+/links sugeridos por el profesor victor
+https://docs.google.com/spreadsheets/d/1YU6oPfr3ZgM37d0UBrW4Gn6-8OquVCu5etSVobbedck/edit#gid=2042192942
+
+/video sugerido que es el event loop
+https://www.youtube.com/watch?v=8aGhZQkoFbQ
+
+/creador de borders muy amigable
+https://www.cssmatic.com/es/border-radius

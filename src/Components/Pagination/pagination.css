@@ -1,0 +1,22 @@
+.pagination {
+    justify-content: center;
+}
+
+.pagination .page-item .page-link {
+    color:  #2d2d2d;
+    font-weight: 600;
+}
+
+.pagination .page-item .active {
+    color: #f0f0f0;
+    background-color: #2d2d2d;
+    font-weight: 600;
+}
+
+.pagination .page-item .page-link:hover {
+    color: #f07066;
+    background-color: #f0f0f0;
+    font-weight: 600;
+    transition: .3s ease-in-out;
+}
+

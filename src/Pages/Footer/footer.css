@@ -1,0 +1,42 @@
+.main-footer {
+    background-color: #f07066;
+    color: #ffffff;
+    padding: 1rem 0 0.2rem 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.list-unstyled {
+    color: #2d2d2d;
+    margin-bottom: 0.5rem;
+}
+
+.titulos {
+    font-weight: bold;
+}
+
+.social-logos {
+    color: #ffffff;
+    font-size: 2rem;
+    word-spacing: 2rem;
+
+}
+
+.terms {
+    color: #2d2d2d;
+    display: flex;
+    justify-content: center;
+}
+
+.terms1 {
+    display: inline-block;
+    margin-right: 0.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.terms2 {
+    display: inline-block;
+    margin-left: 0.6rem;
+    margin-bottom: 0.5rem;
+}
