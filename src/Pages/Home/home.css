@@ -108,23 +108,27 @@ a:link {
     object-fit: contain;
     z-index: 0;
     justify-content: center;
-  
+    
+    margin-bottom: 1rem;
     padding: 0 1rem;
     overflow-y: auto;
   }
+
   .cards {
     width: 150px;
-  }
-  .photos {
-    background-color: #f0f0f0;
-  
-    filter: brightness(100%);
-    transition: .4s ease-in-out;
   }
   
   .pictures {
     height: 120px;
     margin: 10px 0;
-    width: 100px;
+    width: 120px;
+  }
+
+  .back-to-top {
+    background-color: white;
+    margin-right: 1.5rem;
+    margin-bottom: 1rem;
+    margin: auto;
+    margin-bottom: 1rem;
   }
 }
