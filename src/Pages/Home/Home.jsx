@@ -147,7 +147,7 @@ export const Home = ({ formText }) => {
             )
         }
       <div className='pagination'>
-        <Pagination postsPerPage={postsPerPage} totalPosts={item.length} paginate={paginate} onClick={goUp} currentPage={currentPage}/>
+        <Pagination postsPerPage={postsPerPage} totalPosts={item.length} paginate={paginate}  currentPage={currentPage}/>
       </div>
     </div>
   )

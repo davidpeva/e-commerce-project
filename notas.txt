@@ -29,4 +29,5 @@ https://www.youtube.com/watch?v=8aGhZQkoFbQ
 https://www.cssmatic.com/es/border-radius
 
 
-cambio para ver si sirvio lo de las ramas
+PAGINA PARA ENVIAR CODIGO A UN REPO ESPECIFICO ME DEJA CAMBIAR DE REPO
+https://www.freecodecamp.org/espanol/news/subir-a-github-lo-suficientemente-simple-para-poetas/

@@ -77,14 +77,25 @@ form:focus-within {
 .button:hover {
     transition: .3s ease-in-out;
     color: #f07066;
-  }
+}
 
 .store-logo:hover {
     transition: .3s ease-in-out;
     color: #f07066;
-  }
+}
 
 .home:hover {
     transition: .3s ease-in-out;
-    color:  #ffffff;
-  }
+    color: #ffffff;
+}
+
+
+@media screen and (min-width: 320px) and (max-width:480px) {
+    .input {
+        width: 17rem;
+    }
+
+    .store-logo {
+        padding: 1.5rem 1.5rem 2rem 2rem;
+    }
+}
