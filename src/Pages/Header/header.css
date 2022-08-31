@@ -92,7 +92,7 @@ form:focus-within {
 
 @media screen and (min-width: 320px) and (max-width:480px) {
     .input {
-        width: 16rem;
+        width: 15rem;
     }
 
     .store-logo {
