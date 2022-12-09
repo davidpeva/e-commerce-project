@@ -32,7 +32,8 @@ export default function App() {
           />
           <Route
             className='nombres'
-            path="/product/:_id"
+            path="/product/:id"
+            // path="/product/:_id"
             element={
               <Product
               />

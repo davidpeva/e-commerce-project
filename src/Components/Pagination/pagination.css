@@ -1,5 +1,21 @@
+/* .pagination {
+    justify-content: center;
+} */
+/* NUEVOS ATRIBUTOS PARA LA NUEVA PAGINACION */
 .pagination {
     justify-content: center;
+    color:  #2d2d2d;
+    font-weight: 600;
+}
+/* NUEVO ATRIBUTO */
+.pagination li{
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+/* NUEVO ATRIBUTO */
+ul a{
+    color:  #2d2d2d;
 }
 
 .pagination .page-item .page-link {
@@ -31,7 +47,7 @@
     }
     .pagination .page-item .page-link:hover {
         color: #f0f0f0;
-    background-color: #2d2d2d;
+        background-color: #2d2d2d;
     }
 }
 

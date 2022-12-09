@@ -15,7 +15,7 @@ export const Home = ({ formText }) => {
 
   //LOGICA PARA LA PAGINACION
   const [currentPage, setCurrentPage] = useState(1)
-  const [postsPerPage] = useState(40)
+  const [postsPerPage] = useState(8)
 
   //LOGICA PARA LA PAGINACION
   const indexOfLastPost = currentPage * postsPerPage;
@@ -42,7 +42,8 @@ export const Home = ({ formText }) => {
 
   const getItems = async () => {
     try {
-      const res = await axios.get('https://ecomerce-master.herokuapp.com/api/v1/item')
+      // const res = await axios.get('https://ecomerce-master.heroku.com/api/v1/item')
+      const res = await axios.get('https://fakestoreapi.com/products/')
       setItem(res.data)
       setFilterItems(res.data)
     } catch (error) {
@@ -59,7 +60,8 @@ export const Home = ({ formText }) => {
 
     const searcher = () => {
       let data = item.filter((product) => {
-        return product.product_name.toLowerCase().includes(formText.toLowerCase())
+        // return product.product_name.toLowerCase().includes(formText.toLowerCase())
+        return product.title.toLowerCase().includes(formText.toLowerCase())
       })
       console.log(data)
       if (data.length === 0) {
@@ -96,26 +98,26 @@ export const Home = ({ formText }) => {
 
   return (
     <div className='father-container'>
-        <ul className='nombres estilos' >
-          {
-            //ACA USO CURRENTPOST.MAP Y NO ITEM.MAP PARA QUE SOLO ME ACOMODE LOS 30 CON ITEM.MAP ME ACOMODA LOS 200
-            currentPost.map(product => (
-              <li className='cards' key={product._id}>
-                <Link to={`/product/${product._id}`}>
-                  <div className='photos'>
-                    {
-                      product.image
+      <ul className='nombres estilos' >
+        {
+          //ACA USO CURRENTPOST.MAP Y NO ITEM.MAP PARA QUE SOLO ME ACOMODE LOS 30 CON ITEM.MAP ME ACOMODA LOS 200
+          currentPost.map(product => (
+            <li className='cards' key={product.id}>
+              <Link to={`/product/${product.id}`}>
+                <div className='photos'>
+                  {
+                    product.image
+                      ?
+                      <img className='pictures' src={product.image} alt={product.id} />
+                      :
+                      product.images
                         ?
-                        <img className='pictures' src={product.image} alt={product._id} />
+                        <img className='pictures' src={product.images} alt={product.id} />
                         :
-                        product.images
-                          ?
-                          <img className='pictures' src={product.images} alt={product._id} />
-                          :
-                          <img className='pictures' src={error} alt='error' />
+                        <img className='pictures' src={error} alt='error' />
 
-                    }
-                    {/* {
+                  }
+                  {/* {
               product.image
               ?
               <img className='pictures' src={product.image} alt={product._id}/>
@@ -128,26 +130,27 @@ export const Home = ({ formText }) => {
               
             } */}
 
-                  </div>
-                  <div className='producto'>
-                    <div className='p-description text-decoration-none'>{product.product_name}</div>
-                    <div className='p-price'>${product.price}</div>
-                  </div>
-                </Link>
-              </li>
-            ))
+                </div>
+                <div className='producto'>
+                  {/* <div className='p-description text-decoration-none'>{product.product_name}</div> */}
+                  <div className='p-description text-decoration-none'>{product.title}</div>
+                  <div className='p-price'>${product.price}</div>
+                </div>
+              </Link>
+            </li>
+          ))
 
-          }
-        </ul>
-        {
-          showGoUp
-          && (
-            // <button type='button' onClick={scrollToTop} className='back-to-top'><FaArrowCircleUp type='button' onClick={scrollToTop} className='back-to-top'/></button>
-          <FaArrowCircleUp type='button' onClick={scrollToTop} className='back-to-top'/>
-            )
         }
+      </ul>
+      {
+        showGoUp
+        && (
+          // <button type='button' onClick={scrollToTop} className='back-to-top'><FaArrowCircleUp type='button' onClick={scrollToTop} className='back-to-top'/></button>
+          <FaArrowCircleUp type='button' onClick={scrollToTop} className='back-to-top' />
+        )
+      }
       <div className='pagination'>
-        <Pagination postsPerPage={postsPerPage} totalPosts={item.length} paginate={paginate}  currentPage={currentPage}/>
+        <Pagination postsPerPage={postsPerPage} totalPosts={item.length} paginate={paginate} currentPage={currentPage} />
       </div>
     </div>
   )

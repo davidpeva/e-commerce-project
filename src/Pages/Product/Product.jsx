@@ -17,7 +17,8 @@ export const Product = () => {
             async () => {
                 try {
                     //el data dentro de los curly brackets fue el que me ayudo a que el fetch sirviera
-                    const { data } = await axios.get(`https://ecomerce-master.herokuapp.com/api/v1/item/${params._id}`)
+                    // const { data } = await axios.get(`https://ecomerce-master.herokuapp.com/api/v1/item/${params._id}`)
+                    const { data } = await axios.get(`https://fakestoreapi.com/products/${params.id}`)
                     setInfo(data)
                 } catch (error) {
                     console.log('error Api', error);
@@ -32,19 +33,21 @@ export const Product = () => {
                 {
                     info.image
                         ?
-                        <img className='picture' src={info.image} alt={info._id} />
+                        <img className='picture' src={info.image} alt={info.id} />
                         :
                         info.images
                             ?
-                            <img className='picture' src={info.images} alt={info._id} />
+                            <img className='picture' src={info.images} alt={info.id} />
                             :
                             <img className='picture' src={error} alt='error' />
                 }
             </div>
             <div className='div-info'>
                 <div className='important-info'>
-                    <div className='product-name'>{info.product_name}</div>
-                    <div>{info.brand}</div>
+                    {/* <div className='product-name'>{info.product_name}</div> */}
+                    <div className='product-name'>{info.title}</div>
+                    {/* <div>{info.brand}</div> */}
+                    <div>{info.category}</div>
                     <div className='price'>${info.price}</div>
                 </div>
                 <div className='button-cart'>
