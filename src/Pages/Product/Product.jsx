@@ -37,17 +37,16 @@ export const Product = () => {
     }, []);
 
     return (
-        <div className='container product-detail'>
-            <div className='div-foto'>
-                {
-                    loading
-                        ?
-                        <Loader loading={loading} />
-                        :
-                        <img className='picture' src={info.image} alt={info.id} />
-
-                }
-                {/* {
+        <div >
+            {
+                loading
+                    ?
+                    <Loader loading={loading} />
+                    :
+                    <div className='container product-detail'>
+                        <div className='div-foto'>
+                            <img className='picture' src={info.image} alt={info.id} />
+                            {/* {
                     info.image
                         ?
                         <img className='picture' src={info.image} alt={info.id} />
@@ -58,23 +57,25 @@ export const Product = () => {
                             :
                             <img className='picture' src={error} alt='error' />
                 } */}
-            </div>
-            <div className='div-info'>
-                <div className='important-info'>
-                    {/* <div className='product-name'>{info.product_name}</div> */}
-                    <div className='product-name'>{info.title}</div>
-                    {/* <div>{info.brand}</div> */}
-                    <div>{info.category}</div>
-                    <div className='price'>${info.price}</div>
-                </div>
-                <div className='button-cart'>
-                    <button className='button-bag' typeof='button'>Add To Shopping Bag</button>
-                </div>
-                <div className='general-info'>
-                    <div className='product-information'>Product Information:</div>
-                    <div>{info.description}</div>
-                </div>
-            </div>
+                        </div>
+                        <div className='div-info'>
+                            <div className='important-info'>
+                                {/* <div className='product-name'>{info.product_name}</div> */}
+                                <div className='product-name'>{info.title}</div>
+                                {/* <div>{info.brand}</div> */}
+                                <div>{info.category}</div>
+                                <div className='price'>${info.price}</div>
+                            </div>
+                            <div className='button-cart'>
+                                <button className='button-bag' typeof='button'>Add To Shopping Bag</button>
+                            </div>
+                            <div className='general-info'>
+                                <div className='product-information'>Product Information:</div>
+                                <div>{info.description}</div>
+                            </div>
+                        </div>
+                    </div>
+            }
         </div>
         //agregarle un boton de go back hay ejemplos en la pagina que me ayudo
 
