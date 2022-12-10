@@ -7,6 +7,7 @@ import Pagination from '../../Components/Pagination/Pagination'
 import { FaArrowCircleUp } from "react-icons/fa";
 
 export const Home = ({ formText }) => {
+
   //ESTE ME TRAE LOS PRODUCTOS
   const [item, setItem] = useState([])
 
@@ -97,7 +98,7 @@ export const Home = ({ formText }) => {
 
 
   return (
-    <div className='father-container'>
+    <body className='father-container'>
       <ul className='nombres estilos' >
         {
           //ACA USO CURRENTPOST.MAP Y NO ITEM.MAP PARA QUE SOLO ME ACOMODE LOS 30 CON ITEM.MAP ME ACOMODA LOS 200
@@ -149,9 +150,10 @@ export const Home = ({ formText }) => {
           <FaArrowCircleUp type='button' onClick={scrollToTop} className='back-to-top' />
         )
       }
+
       <div className='pagination'>
         <Pagination postsPerPage={postsPerPage} totalPosts={item.length} paginate={paginate} currentPage={currentPage} />
       </div>
-    </div>
+    </body>
   )
 }

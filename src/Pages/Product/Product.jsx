@@ -3,7 +3,7 @@ import axios from 'axios'
 import './product.css'
 import error from '../../Assets/404.jfif'
 import { useParams } from 'react-router-dom'
-
+import Loader from '../Loader/Loader'
 
 
 export const Product = () => {
@@ -26,11 +26,28 @@ export const Product = () => {
             })()
     }, [params])//aca me ponia problema esLint pero la dependencia es los parametros q vienen del click
 
+    //Esto me setea el loader
+    const [loading, setLoading] = useState(false);
+    //Esto me da el tiempo del loader
+    useEffect(() => {
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+        }, 1000);
+    }, []);
 
     return (
         <div className='container product-detail'>
             <div className='div-foto'>
                 {
+                    loading
+                        ?
+                        <Loader loading={loading} />
+                        :
+                        <img className='picture' src={info.image} alt={info.id} />
+
+                }
+                {/* {
                     info.image
                         ?
                         <img className='picture' src={info.image} alt={info.id} />
@@ -40,7 +57,7 @@ export const Product = () => {
                             <img className='picture' src={info.images} alt={info.id} />
                             :
                             <img className='picture' src={error} alt='error' />
-                }
+                } */}
             </div>
             <div className='div-info'>
                 <div className='important-info'>
@@ -60,6 +77,8 @@ export const Product = () => {
             </div>
         </div>
         //agregarle un boton de go back hay ejemplos en la pagina que me ayudo
+
+
     )
 }
 
